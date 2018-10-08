@@ -26,7 +26,6 @@ function table.values(tbl, func)
 	return result
 end
 
--- list
 function table.extend(tbl1, tbl2)
 	for k,v in pairs(tbl2) do
 		table.insert(tbl1, v)
@@ -34,10 +33,9 @@ function table.extend(tbl1, tbl2)
 	return tbl1
 end
 
--- hash
 function table.update(tbl1, tbl2)
 	for k,v in pairs(tbl2) do
-		tabl1[k] = v
+		tbl1[k] = v
 	end
 	return tbl1
 end
