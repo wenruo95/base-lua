@@ -6,6 +6,21 @@ function table.isempty(tbl)
 	return false
 end
 
+function table.find(tbl,func)
+	local isfunc = type(func) == "function"
+	for k,v in pairs(tbl) do
+		if isfunc then
+			if func(k,v) then
+				return k,v
+			end
+		else
+			if func == v then
+				return k,v
+			end
+		end
+	end
+end
+
 function table.keys(tbl, func)
 	local result = {}
 	for k,v in pairs(tbl) do
